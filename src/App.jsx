@@ -1,12 +1,13 @@
 import { Container } from 'react-bootstrap'
 import './App.css'
+import Titulo from '../components/Titulo'
 
 function App() {
 
   return (
     <>
       <Container className='my-4'>
-        <h1 className='bg-dark text-light text-center'>Formulario</h1>
+        <Titulo />
       </Container>
     </>
   )
