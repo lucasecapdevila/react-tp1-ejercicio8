@@ -7,3 +7,7 @@
 .mainPage{
   flex-grow: 1;
 }
+
+.bgForm{
+  background: #f1da0eb9;
+}
