@@ -9,6 +9,13 @@ const Formulario = () => {
   const [dni, setDni] = useState({value: '', validated: null})
   const [email, setEmail] = useState({value: '', validated: null})
 
+  const expresiones = {
+    nombreYApellido: /^[a-zA-ZÀ-ÿ\s]{2,35}$/,
+    dni: /^[\d]{1,2}\.?[\d]{3}\.?[\d]{3}$/,
+    correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
+  }
+  
+
 
   const alertExito = () => {
     Swal.fire({
@@ -42,7 +49,7 @@ const Formulario = () => {
             name="nombre"
             minlength="2"
             maxlength="35"
-            regExp=""
+            expresionRegular={expresiones.nombreYApellido}
           />
           <Input
             state={apellido}
@@ -53,18 +60,18 @@ const Formulario = () => {
             name="apellido"
             minlength="2"
             maxlength="35"
-            regExp=""
+            expresionRegular={expresiones.nombreYApellido}
           />
           <Input
             state={dni}
             setState={setDni}
             label="DNI"
-            placeholder="99.999.999"
+            placeholder="0.000.001 - 99.999.999"
             type="number"
             name="dni"
             min="1"
             max="99999999"
-            regExp=""
+            expresionRegular={expresiones.dni}
           />
           <Input
             state={email}
@@ -75,7 +82,7 @@ const Formulario = () => {
             name="email"
             minlength="3"
             maxlength="254"
-            regExp=""
+            expresionRegular={expresiones.correo}
           />
         </div>
 
