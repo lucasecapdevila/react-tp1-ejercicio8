@@ -8,9 +8,11 @@ const Input = ({state, setState, label, placeholder, type, name, expresionRegula
 
   const validacion = () => {
     if(expresionRegular.test(state.value)){
-      // Código en caso de ser válido
+      const input = document.getElementById(`${name}`)
+      input.style.border = '3px solid green'
     } else{
-      // Código en caso de NO ser válido
+      const input = document.getElementById(`${name}`)
+      input.style.border = '3px solid red'
     }
   }
 

@@ -9,7 +9,7 @@
 }
 
 .bgForm{
-  background: #f1da0eb9;
+  background: #fefefe;
 }
 
 .btnEnviar{
@@ -21,4 +21,8 @@
     width: 33%;
     justify-content: center;
   }
+}
+
+.form-control:focus{
+  box-shadow: none !important; 
 }
