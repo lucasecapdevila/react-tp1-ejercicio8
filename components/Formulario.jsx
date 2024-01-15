@@ -27,10 +27,45 @@ const Formulario = () => {
     <section>
       <Form className='bgForm d-flex flex-column p-2'>
         <div className="row">
-          <Input />
+          <Input 
+            label="Nombre"
+            placeholder="Juan"
+            type="text"
+            name="nombre"
+            minlength="2"
+            maxlength="35"
+            regExp=""
+          />
+          <Input 
+            label="Apellido"
+            placeholder="Perez"
+            type="text"
+            name="apellido"
+            minlength="2"
+            maxlength="35"
+            regExp=""
+          />
+          <Input 
+            label="DNI"
+            placeholder="99.999.999"
+            type="number"
+            name="dni"
+            min="1"
+            max="99999999"
+            regExp=""
+          />
+          <Input 
+            label="Email"
+            placeholder="ejemplo@mail.com"
+            type="email"
+            name="email"
+            minlength="3"
+            maxlength="254"
+            regExp=""
+          />
         </div>
 
-        <Button variant='success' className='btnEnviar align-self-end' onClick={alertError}>Enviar</Button>
+        <Button type='submit' variant='success' className='btnEnviar align-self-end'>Enviar</Button>
 
       </Form>
     </section>
