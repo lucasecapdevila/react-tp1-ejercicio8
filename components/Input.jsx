@@ -1,4 +1,3 @@
-import React from 'react'
 import { Form } from 'react-bootstrap'
 
 const Input = ({state, setState, label, placeholder, type, name, expresionRegular, minlength, maxlength, min, max}) => {
@@ -8,11 +7,9 @@ const Input = ({state, setState, label, placeholder, type, name, expresionRegula
 
   const validacion = () => {
     if(expresionRegular.test(state.value)){
-      const input = document.getElementById(`${name}`)
-      input.style.border = '3px solid green'
+      return true
     } else{
-      const input = document.getElementById(`${name}`)
-      input.style.border = '3px solid red'
+      return false
     }
   }
 
@@ -31,6 +28,7 @@ const Input = ({state, setState, label, placeholder, type, name, expresionRegula
         maxLength={maxlength}
         min={min}
         max={max}
+        isValid={validacion()}
         required
       />
     </Form.Group>

@@ -22,7 +22,3 @@
     justify-content: center;
   }
 }
-
-.form-control:focus{
-  box-shadow: none !important; 
-}

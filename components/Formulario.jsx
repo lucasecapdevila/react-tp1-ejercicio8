@@ -15,8 +15,6 @@ const Formulario = () => {
     correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
   }
   
-
-
   const alertExito = () => {
     Swal.fire({
       title: 'Datos enviados!',
@@ -34,11 +32,14 @@ const Formulario = () => {
       confirmButtonText: 'Aceptar'
     })
   }
-
+  
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
 
   return (
     <section>
-      <Form className='bgForm d-flex flex-column p-2'>
+      <Form className='bgForm d-flex flex-column p-2' onSubmit={handleSubmit}>
         <div className="row">
           <Input
             state={nombre}
