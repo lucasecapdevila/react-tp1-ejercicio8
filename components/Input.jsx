@@ -7,9 +7,9 @@ const Input = ({state, setState, label, placeholder, type, name, expresionRegula
 
   const validacion = () => {
     if(expresionRegular.test(state.value)){
-      return true
+      setState({...state, validated: true})
     } else{
-      return false
+      setState({...state, validated: false})
     }
   }
 
@@ -21,14 +21,13 @@ const Input = ({state, setState, label, placeholder, type, name, expresionRegula
         onChange={cambiarInput}
         onKeyUp={validacion}
         onBlur={validacion}
-        valido={state.validated}
         type={type}
         placeholder={placeholder}
         minLength={minlength}
         maxLength={maxlength}
         min={min}
         max={max}
-        isValid={validacion()}
+        isValid={state.validated}
         required
       />
     </Form.Group>
