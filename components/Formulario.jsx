@@ -35,6 +35,20 @@ const Formulario = () => {
   
   const handleSubmit = (e) => {
     e.preventDefault()
+    if(
+      nombre.validated === true &&
+      apellido.validated === true &&
+      dni.validated === true &&
+      email.validated === true
+    ){
+      alertExito()
+      setNombre({value: '', validated: null})
+      setApellido({value: '', validated: null})
+      setDni({value: '', validated: null})
+      setEmail({value: '', validated: null})
+    } else{
+      alertError()
+    }
   }
 
   return (
